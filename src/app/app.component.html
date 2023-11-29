@@ -1,0 +1,160 @@
+<div class="container mt-5">
+  <h3>Book Details</h3>
+
+  <div class="form-area">
+    <form [formGroup]="bookDetail" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label>Book Name</label>
+        <input
+          type="text"
+          placeholder="Enter Book Name"
+          class="form-control"
+          formControlName="bookName"
+        />
+      </div>
+      <div
+        *ngIf="
+          bookDetail.get('bookName')?.hasError('required') &&
+          bookDetail.get('bookName')?.touched
+        "
+        class="error-message"
+      >
+        Please Fill this Field
+      </div>
+
+      <div class="form-group">
+        <label>Author</label>
+        <input
+          type="text"
+          placeholder="Author"
+          class="form-control"
+          formControlName="author"
+        />
+      </div>
+      <div
+        *ngIf="
+          bookDetail.get('author')?.hasError('required') &&
+          bookDetail.get('author')?.touched
+        "
+        class="error-message"
+      >
+        Please Fill this Field
+      </div>
+
+      <div class="form-group">
+        <label>Publication</label>
+        <input
+          type="text"
+          placeholder="Publication"
+          class="form-control"
+          formControlName="publication"
+        />
+      </div>
+      <div
+        *ngIf="
+          bookDetail.get('publication')?.hasError('required') &&
+          bookDetail.get('publication')?.touched
+        "
+        class="error-message"
+      >
+        Please Fill this Field
+      </div>
+
+      <div class="form-group">
+        <label>Price</label>
+        <input
+          type="number"
+          placeholder="Price"
+          class="form-control"
+          formControlName="price"
+        />
+      </div>
+      <div
+        *ngIf="
+          bookDetail.get('price')?.hasError('required') &&
+          bookDetail.get('price')?.touched
+        "
+        class="error-message"
+      >
+        Please Enter The Price
+      </div>
+
+      <div class="form-group">
+        <label>Genre</label>
+        <input
+          type="text"
+          placeholder="Genre"
+          class="form-control"
+          formControlName="genre"
+        />
+      </div>
+      <div
+        *ngIf="
+          bookDetail.get('genre')?.hasError('required') &&
+          bookDetail.get('genre')?.touched
+        "
+        class="error-message"
+      >
+        Please Enter The Genre
+      </div>
+
+      <div class="form-group">
+        <label>Published Date</label>
+        <input
+          type="date"
+          placeholder="Published Date"
+          class="form-control"
+          formControlName="publishedDate"
+        />
+      </div>
+      <div
+        *ngIf="
+          bookDetail.get('publishedDate')?.hasError('required') &&
+          bookDetail.get('publishedDate')?.touched
+        "
+        class="error-message"
+      >
+        Please Enter The Data
+      </div>
+
+      <div class="form-group">
+        <label>Country</label>
+        <input
+          type="text"
+          placeholder="Country"
+          class="form-control"
+          formControlName="country"
+        />
+      </div>
+      <div
+        *ngIf="
+          bookDetail.get('country')?.hasError('required') &&
+          bookDetail.get('country')?.touched
+        "
+        class="error-message"
+      >
+        Please Enter the Country
+      </div>
+
+      <div class="form-group">
+        <label>Description</label>
+        <textarea
+          placeholder="Description"
+          class="form-control"
+          formControlName="description"
+        ></textarea>
+      </div>
+      <div
+        *ngIf="
+          bookDetail.get('description')?.hasError('required') &&
+          bookDetail.get('description')?.touched
+        "
+        class="error-message"
+      >
+        Please Fill this Field
+      </div>
+
+      <button class="btn btn-primary" [disabled]="!bookDetail.valid">Submit</button>
+    </form>
+  </div>
+</div>
